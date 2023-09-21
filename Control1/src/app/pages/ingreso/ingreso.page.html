@@ -1,0 +1,54 @@
+<ion-content>
+  <div class="logo-container">
+    <img src="assets/images/logoDuoc.png"  alt="Logo Duoc"/>
+  </div>  
+    <br>
+  <ion-title #titulo>
+    <div class="fondo-image">
+      <div class= "titulo">
+        <h3>Sistema de Asistencia</h3>
+      </div>
+    </div>
+  </ion-title>
+  <br>
+
+  <div class="ion-padding-vertical">
+
+    <ion-card class="ion-text-center ion-padding-vertical">
+
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h2>Bienvenido</h2>
+        </ion-label>
+      </ion-card-title>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.correo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" >Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+        </ion-item>
+        <ion-row>
+          <div class="boton">
+            <ion-button color="secondary" (click)="ingresar()">Ingresar</ion-button>
+        </div>
+        
+
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class= boton2>
+      <ion-button [routerLink]="['/correo']" color="secondary" (click)="Recuperar()">
+        Recuperar Contraseña
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

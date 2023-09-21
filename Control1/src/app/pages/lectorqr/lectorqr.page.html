@@ -1,0 +1,95 @@
+<ion-content>
+  <div class="logo-container">
+    <img src="assets/images/logoDuoc.png"  alt="Logo Duoc"/>
+  </div>  
+  
+  <br>
+  <br>
+  <br>
+  
+  <input #fileinput hidden id="input-file" type="file" accept="image/*;capture=camera" 
+    (change)="verificarArchivoConQR($event.target.files)" />
+
+  <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="videocam-outline"></ion-icon>
+    Comenzar Escaneo de QR
+  </ion-button>
+
+  <ion-button *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </ion-button>
+
+
+
+  <ion-button [routerLink]= "['/inicio']" (click)="volverInicio()" expand="block" expand="full" shape="round">
+    <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+    Volver al Inicio
+  </ion-button>
+
+  <video #video [hidden]="!escaneando" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Datos de la Asignatura</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <br>
+      <table>
+        <tr>
+          <td class="ancho_columna_titulos">Bloque de Inicio</td>
+          <td>{{ bloqueInicio}}</td>
+        <tr>
+        <tr>
+          <td>Bloque de Término</td>
+          <td>{{ bloqueTermino}}</td>
+        <tr>
+        <tr>
+          <td>Día</td>
+          <td>{{ dia}}</td>
+        <tr>
+        <tr>
+          <td>Hora de Fin</td>
+          <td>{{ horaFin}}</td>
+        <tr>
+        <tr>
+          <td>Hora de Inicio</td>
+          <td>{{ horaInicio}}</td>
+        <tr>
+        <tr>
+          <td>Sigla</td>
+          <td>{{ idAsignatura}}</td>
+        <tr>
+        <tr>
+          <td>Nombre de Asignatura</td>
+          <td>{{ nombreAsignatura}}</td>
+        <tr>
+        <tr>
+          <td>Nombre del Profesor</td>
+          <td>{{ nombreProfesor}}</td>
+        <tr>
+        <tr>
+          <td>Sección</td>
+          <td>{{ seccion}}</td>
+        <tr>
+        <tr>
+          <td>Sede</td>
+          <td>{{ sede}}</td>
+        <tr>
+      </table>
+      <br><br>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class= boton2>
+      <ion-button [routerLink]="['/ingreso']" color="secondary" (click)="Recuperar()">
+        CERRAR SESION
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

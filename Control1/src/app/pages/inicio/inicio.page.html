@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="logo-container">
+    <img src="assets/images/logoDuoc.png"  alt="Logo Duoc"/>
+  </div>  
+  <br>
+  <br>
+  <ion-title #titulo>
+    <div class="fondo-image">
+      <div class= "titulo">
+        <h3>Sistema de Asistencia</h3>
+      </div>
+    </div>
+  </ion-title>
+  <ion-title class="ion-padding-top">
+    <ion-label>
+      <br>
+      <h2 class="ion-text-center" *ngIf="nombre">Bienvenid@ {{ usuario.nombre }}</h2>
+    </ion-label>
+  </ion-title>
+  <ion-card class="lector-qr"> 
+    <ion-label>
+      <h2 color="secondary" class="ion-text-center">Presione sobre el boton para iniciar el lector</h2>
+    </ion-label>
+    <br>
+    <!-- Botón para REGISTRAR APP -->
+    <div class="ion-padding-vertical ion-text-center">
+      <ion-button [routerLink]="['/lectorqr']" color="secondary">Ingreso</ion-button>
+    </div>
+    <h3>Escanea el codigo QR para registrar tu asistencia a clase, empieza por presionar el boton de arriba para acceder a las opciones de escaneo codigo QR</h3>
+    <div class="image-wrapper">
+      <!-- Imagen de fondo -->
+      <img src="assets/images/teacher.jpg" class="background-image" alt="Background">
+  
+      <!-- Imagen del QR -->
+      <img src="assets/images/QR.png" class="qr-image" alt="QR Code">
+  </div>
+    <br>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class= boton2>
+      <ion-button [routerLink]="['/correo']" color="secondary" (click)="Recuperar()">
+        Recuperar Contraseña
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

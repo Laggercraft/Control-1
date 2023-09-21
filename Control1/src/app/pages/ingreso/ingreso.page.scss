@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+ion-content{
+    --background: none;
+    /*DesactivarelcolordefondopordefectodeIonic*/background-image: url('../../../assets/images/sede_padre_alonso.jpg');
+    /*Asegúratedequelarutaseacorrecta*/background-size: cover;
+    /*Hacequelaimagencubratodoelelemento,ajustándosesegúnseanecesario*/background-repeat: no-repeat;
+    /*Evitaquelaimagenserepita*/background-position: center center;
+    /*Centralaimagenenelcontenedor*/
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    --padding-end: 20px;
+    --padding-start: 20px;
+}
+ion-item{
+    --padding-bottom: 10px;
+}
+
+.logo-container {
+    height: 100px;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+.ion-padding-vertical{
+    height: 70%;
+    padding: 80px 10px 15px;
+}
+
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.boton {
+    text-shadow: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Puedes ajustar la altura si es necesario */
+    width: 100%; /* Puedes ajustar el ancho si es necesario */
+    margin-top: 20px;/*ne permite modificar el espacio */
+}
+
+.fondo-image{
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+}
+
+ion-toolbar {
+    height: 60px;
+    width: 100%; 
+    display: flex;
+}
+
+.boton2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    font-family: 'Oswald', sans-serif;
+    color: rgb(248, 179, 28);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    font-size: 24px;
+    animation: moveRight 4.8s linear infinite;
+    /*seconfiguraralaanimacionacontinuacion*/-webkit-animation: moveRight 5s linear infinite;
+    -webkit-animation: moveRight 4.8s linear infinite;
+}
+
+@keyframes moveRight {
+    0% {
+        left: -100%;  /* posición inicial */
+    }
+    100% {
+        left: 100%;   /* posición final (fuera de la vista a la derecha) */
+    }
+}
